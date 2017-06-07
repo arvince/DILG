@@ -8,4 +8,22 @@
     tools:context="com.dilg.dilg.Result1"
     tools:showIn="@layout/activity_result">
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dip"
+        android:paddingTop="10dip"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dip"
+        android:textColor="@color/colorAccent" />
+
+
 </android.support.constraint.ConstraintLayout>
