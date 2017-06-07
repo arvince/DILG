@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">DILG</string>
+    <string name="app_name">DILG Application</string>
+    <string name="title_activity_result">Result</string>
 </resources>
