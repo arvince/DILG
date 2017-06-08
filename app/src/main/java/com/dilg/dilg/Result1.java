@@ -29,7 +29,7 @@ public class Result1 extends AppCompatActivity {
     private ListView lv;
 
     // URL to get contacts JSON
-    private static String url = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1wGHKRWA9PCZelTiNYH7EgSf8F6Lt9abRrSfjqXwdbdY&sheet=Sheet1";
+    private static String url = "https://script.googleusercontent.com/macros/echo?user_content_key=ct_b_ubdBd8BohB-uOdwpXYbD1wrxQaCzb6qFhc1br09fLFFh4eWhq6TzV8TaMB89wwaUgAx_sMxbB6a6ins83yluZJML-jjOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwU0E1bAGZJnOQ6TTGWMjJFt1FhFlVHC_A_HK_loLLlY9yfSA4ksRUQut98NxrlCBdi5y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
 
     ArrayList<HashMap<String, String>> contactList;
 

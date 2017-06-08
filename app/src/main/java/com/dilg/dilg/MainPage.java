@@ -40,6 +40,8 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Toast.makeText(MainPage.this, "Test 3 Complete", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainPage.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

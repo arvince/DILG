@@ -16,14 +16,18 @@
         android:paddingTop="10dip"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:layout_editor_absoluteY="33dp"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="6dip"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        tools:layout_editor_absoluteY="70dp"
+        tools:layout_editor_absoluteX="-16dp" />
 
 
 </android.support.constraint.ConstraintLayout>
