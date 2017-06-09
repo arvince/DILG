@@ -5,14 +5,17 @@ package com.dilg.dilg;
  */
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.HorizontalScrollView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
@@ -33,7 +36,16 @@ public class TableMainLayout extends RelativeLayout {
             "Header 6",
             "Header 7",
             "Header 8",
-            "Header 9"
+            "Header 9",
+            "Header 10",
+            "Header 11",
+            "Header 12",
+            "Header 13",
+            "Header 14",
+            "Header 15",
+            "Header 16",
+            "Header 17",
+            "Header 18"
     };
 
     TableLayout tableA;
@@ -96,18 +108,27 @@ public class TableMainLayout extends RelativeLayout {
 
         List<SampleObject> sampleObjects = new ArrayList<SampleObject>();
 
-        for(int x=1; x<=20; x++){
+        for(int x=1; x<=500; x++){
 
             SampleObject sampleObject = new SampleObject(
-                    "Col 1, Row " + x,
-                    "Col 2, Row " + x + " - multi-lines",
+                    "Col 1, Row " + x + " - multi-lines",
+                    "Col 2, Row " + x ,
                     "Col 3, Row " + x,
                     "Col 4, Row " + x,
                     "Col 5, Row " + x,
                     "Col 6, Row " + x,
                     "Col 7, Row " + x,
                     "Col 8, Row " + x,
-                    "Col 9, Row " + x
+                    "Col 9, Row " + x,
+                    "Col 10, Row " + x,
+                    "Col 11, Row " + x,
+                    "Col 12, Row " + x,
+                    "Col 13, Row " + x,
+                    "Col 14, Row " + x,
+                    "Col 15, Row " + x,
+                    "Col 16, Row " + x,
+                    "Col 17, Row " + x,
+                    "Col 18, Row " + x
             );
 
             sampleObjects.add(sampleObject);
@@ -264,7 +285,16 @@ public class TableMainLayout extends RelativeLayout {
                 sampleObject.header6,
                 sampleObject.header7,
                 sampleObject.header8,
-                sampleObject.header9
+                sampleObject.header9,
+                sampleObject.header10,
+                sampleObject.header11,
+                sampleObject.header12,
+                sampleObject.header13,
+                sampleObject.header14,
+                sampleObject.header15,
+                sampleObject.header16,
+                sampleObject.header17,
+                sampleObject.header18
         };
 
         for(int x=0 ; x<loopCount; x++){
@@ -321,7 +351,7 @@ public class TableMainLayout extends RelativeLayout {
     void getTableRowHeaderCellWidth(){
 
         int tableAChildCount = ((TableRow)this.tableA.getChildAt(0)).getChildCount();
-        int tableBChildCount = ((TableRow)this.tableB.getChildAt(0)).getChildCount();;
+        int tableBChildCount = ((TableRow)this.tableB.getChildAt(0)).getChildCount();
 
         for(int x=0; x<(tableAChildCount+tableBChildCount); x++){
 

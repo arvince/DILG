@@ -29,7 +29,7 @@ public class Result1 extends AppCompatActivity {
     private ListView lv;
 
     // URL to get contacts JSON
-    private static String url = "https://script.googleusercontent.com/macros/echo?user_content_key=ct_b_ubdBd8BohB-uOdwpXYbD1wrxQaCzb6qFhc1br09fLFFh4eWhq6TzV8TaMB89wwaUgAx_sMxbB6a6ins83yluZJML-jjOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwU0E1bAGZJnOQ6TTGWMjJFt1FhFlVHC_A_HK_loLLlY9yfSA4ksRUQut98NxrlCBdi5y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
+    private static String url = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1wGHKRWA9PCZelTiNYH7EgSf8F6Lt9abRrSfjqXwdbdY&sheet=ABRA";
 
     ArrayList<HashMap<String, String>> contactList;
 
@@ -87,22 +87,22 @@ public class Result1 extends AppCompatActivity {
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
-                    JSONArray contacts = jsonObj.getJSONArray("Sheet1");
+                    JSONArray contacts = jsonObj.getJSONArray("ABRA");
 
-                    // looping through All Contacts
+                    // looping through All results
                     for (int i = 0; i < contacts.length(); i++) {
                         JSONObject c = contacts.getJSONObject(i);
 
-                        String name = c.getString("Name");
-                        String title = c.getString("Title");
+                        String name = c.getString("Complied_/_Status");
+                        String title = c.getString("Total_Target");
 
 
                         // tmp hash map for single contact
                         HashMap<String, String> contact = new HashMap<>();
 
                         // adding each child node to HashMap key => value
-                        contact.put("Name", name);
-                        contact.put("Title", title);
+                        contact.put("Complied_/_Status", name);
+                        contact.put("Total_Target", title);
 
 
                         // adding contact to contact list
@@ -149,7 +149,7 @@ public class Result1 extends AppCompatActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     Result1.this, contactList,
-                    R.layout.content_result, new String[]{"Name", "Title"}, new int[]{R.id.name,
+                    R.layout.content_result, new String[]{"Complied_/_Status", "Total_Target"}, new int[]{R.id.name,
                     R.id.title});
 
             lv.setAdapter(adapter);

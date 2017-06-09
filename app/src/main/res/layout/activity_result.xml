@@ -36,6 +36,6 @@
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
         android:paddingTop="60dp"
-        android:scrollbars="horizontal" />
+        android:scrollbars="horizontal|vertical" />
 
 </android.support.design.widget.CoordinatorLayout>
