@@ -21,8 +21,12 @@ import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
+
+
 
 public class TableMainLayout extends RelativeLayout {
+    int a = 0;
 
     public final String TAG = "TableMainLayout.java";
 
@@ -110,10 +114,13 @@ public class TableMainLayout extends RelativeLayout {
 
         for(int x=1; x<=500; x++){
 
+
             SampleObject sampleObject = new SampleObject(
                     "Col 1, Row " + x + " - multi-lines",
-                    "Col 2, Row " + x ,
-                    "Col 3, Row " + x,
+//                    "Col 2, Row " + x +
+                    "Output: " + Result1.content1.get(a),
+//                    "Col 3, Row " + x
+                    "Output: " + Result1.content2.get(a),
                     "Col 4, Row " + x,
                     "Col 5, Row " + x,
                     "Col 6, Row " + x,
@@ -132,6 +139,7 @@ public class TableMainLayout extends RelativeLayout {
             );
 
             sampleObjects.add(sampleObject);
+            a++;
         }
 
         return sampleObjects;

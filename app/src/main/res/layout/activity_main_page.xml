@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="331dp"
+        android:layout_width="381dp"
         android:layout_height="258dp"
         app:srcCompat="@drawable/dilg"
         android:layout_marginStart="60dp"
@@ -17,16 +17,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintVertical_chainStyle="spread"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="-17dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="3dp"
         android:layout_marginLeft="60dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="-469dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="52dp"
         android:onClick="sendMessage"
         android:text="Button"
         app:layout_constraintLeft_toLeftOf="@+id/imageView"
@@ -59,8 +61,8 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintRight_toRightOf="@+id/imageView"
-        android:layout_marginBottom="38dp"
-        android:layout_marginRight="32dp" />
+        android:layout_marginBottom="47dp"
+        android:layout_marginRight="63dp" />
 
     <Button
         android:id="@+id/button5"

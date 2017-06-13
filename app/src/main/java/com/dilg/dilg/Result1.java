@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Result1 extends AppCompatActivity {
 
@@ -32,6 +33,11 @@ public class Result1 extends AppCompatActivity {
     private static String url = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1wGHKRWA9PCZelTiNYH7EgSf8F6Lt9abRrSfjqXwdbdY&sheet=ABRA";
 
     ArrayList<HashMap<String, String>> contactList;
+
+    static ArrayList<String> content1 = new ArrayList<>();
+    static ArrayList<String> content2 = new ArrayList<>();
+    static Data datas = new Data();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +113,21 @@ public class Result1 extends AppCompatActivity {
 
                         // adding contact to contact list
                         contactList.add(contact);
+
+
+
+//                        for(int j = 0; j < 500; j++){
+                            datas.setComplied_or_Status(name);
+                            datas.setTotal_Target(title);
+//                            datas.setTotal_Target(title);
+
+                            content1.add(datas.getComplied_or_Status());
+                            content2.add(datas.getTotal_Target());
+//                        }
+
+
+
+//                        Toast.makeText(Result1.this, "Output: " + data.getComplied_or_Status()+"," + data.getTotal_Target() , Toast.LENGTH_SHORT).show();
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
