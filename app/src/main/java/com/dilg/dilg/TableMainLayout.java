@@ -23,18 +23,31 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//String mainHeaders[] = {
+//        "",
+//        "ABRA",
+//        "APAYAO",
+//        "BENGUET",
+//        "BAGUIO CITY",
+//        "IFUGAO",
+//        "KALINGA",
+//        "MT. PROVINCE",
+//        "TOTAL",
+//        "% of Accomplishments"
+//        };
+
 
 
 public class TableMainLayout extends RelativeLayout {
-    int a = 0;
+    public static int a = 0;
 
     public final String TAG = "TableMainLayout.java";
 
     // set the header titles
     String headers[] = {
             "Header 1 n multi-lines",
-            "Header 2",
-            "Header 3",
+            "Complied / Status",
+            "Total Target",
             "Header 4",
             "Header 5",
             "Header 6",
@@ -112,15 +125,16 @@ public class TableMainLayout extends RelativeLayout {
 
         List<SampleObject> sampleObjects = new ArrayList<SampleObject>();
 
-        for(int x=1; x<=500; x++){
+        for(int x=1; x<=495; x++){
 
 
             SampleObject sampleObject = new SampleObject(
-                    "Col 1, Row " + x + " - multi-lines",
+//                    "Col 1, Row " + x + " - multi-lines"
+                    Result1.contenth.get(a),
 //                    "Col 2, Row " + x +
-                    "Output: " + Result1.content1.get(a),
+                    Result1.content1.get(a),
 //                    "Col 3, Row " + x
-                    "Output: " + Result1.content2.get(a),
+                    Result1.content2.get(a),
                     "Col 4, Row " + x,
                     "Col 5, Row " + x,
                     "Col 6, Row " + x,
