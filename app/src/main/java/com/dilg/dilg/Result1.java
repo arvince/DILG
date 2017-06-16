@@ -1,6 +1,7 @@
 package com.dilg.dilg;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -34,9 +35,11 @@ public class Result1 extends AppCompatActivity {
 
     ArrayList<HashMap<String, String>> contactList;
 
+
+    static Data datas = new Data();
+    static ArrayList<String> contenth = new ArrayList<>();
     static ArrayList<String> content1 = new ArrayList<>();
     static ArrayList<String> content2 = new ArrayList<>();
-    static Data datas = new Data();
 
 
     @Override
@@ -52,21 +55,24 @@ public class Result1 extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent intent = new Intent(Result1.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        contactList = new ArrayList<>();
+//        contactList = new ArrayList<>();
 
-        lv = (ListView) findViewById(R.id.list);
+//        lv = (ListView) findViewById(R.id.list);
 
-        new GetContacts().execute();
+            new GetResult().execute();
+
     }
 
     /**
      * Async task class to get json by making HTTP call
      */
-    private class GetContacts extends AsyncTask<Void, Void, Void> {
+    private class GetResult extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -93,34 +99,36 @@ public class Result1 extends AppCompatActivity {
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
-                    JSONArray contacts = jsonObj.getJSONArray("ABRA");
+                    JSONArray source = jsonObj.getJSONArray("ABRA");
 
                     // looping through All results
-                    for (int i = 0; i < contacts.length(); i++) {
-                        JSONObject c = contacts.getJSONObject(i);
+                    for (int i = 0; i < source.length(); i++) {
+                        JSONObject c = source.getJSONObject(i);
 
                         String name = c.getString("Complied_/_Status");
                         String title = c.getString("Total_Target");
+                        String header = c.getString("");
 
 
-                        // tmp hash map for single contact
-                        HashMap<String, String> contact = new HashMap<>();
-
-                        // adding each child node to HashMap key => value
-                        contact.put("Complied_/_Status", name);
-                        contact.put("Total_Target", title);
-
-
-                        // adding contact to contact list
-                        contactList.add(contact);
+//                        // tmp hash map for single contact
+//                        HashMap<String, String> contact = new HashMap<>();
+//
+//                        // adding each child node to HashMap key => value
+//                        contact.put("Complied_/_Status", name);
+//                        contact.put("Total_Target", title);
+//
+//
+//                        // adding contact to contact list
+//                        contactList.add(contact);
 
 
 
 //                        for(int j = 0; j < 500; j++){
                             datas.setComplied_or_Status(name);
                             datas.setTotal_Target(title);
-//                            datas.setTotal_Target(title);
+                            datas.setheader(header);
 
+                            contenth.add(datas.getHeader());
                             content1.add(datas.getComplied_or_Status());
                             content2.add(datas.getTotal_Target());
 //                        }
@@ -168,12 +176,13 @@ public class Result1 extends AppCompatActivity {
             /**
              * Updating parsed JSON data into ListView
              * */
-            ListAdapter adapter = new SimpleAdapter(
-                    Result1.this, contactList,
-                    R.layout.content_result, new String[]{"Complied_/_Status", "Total_Target"}, new int[]{R.id.name,
-                    R.id.title});
-
-            lv.setAdapter(adapter);
+//            ListAdapter adapter = new SimpleAdapter(
+//                    Result1.this, contactList,
+//                    R.layout.content_result, new String[]{"Complied_/_Status", "Total_Target"}, new int[]{R.id.name,
+//                    R.id.title});
+//
+//            lv.setAdapter(adapter);
+            Toast.makeText(Result1.this, "Test 5 Complete", Toast.LENGTH_SHORT).show();
         }
 
     }

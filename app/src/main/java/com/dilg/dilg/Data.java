@@ -8,6 +8,7 @@ public class Data {
 
     private String Complied_or_Status;
     private String Total_Target;
+    private String header;
 
     public String getComplied_or_Status()
     {
@@ -27,6 +28,16 @@ public class Data {
     public void setTotal_Target(String Total_Target)
     {
         this.Total_Target = Total_Target;
+    }
+
+    public String getHeader()
+    {
+        return header;
+    }
+
+    public void setheader(String header)
+    {
+        this.header = header;
     }
 
 }

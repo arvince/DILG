@@ -1,11 +1,14 @@
 package com.dilg.dilg;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.net.URL;
 
 
 public class MainPage extends AppCompatActivity {
@@ -32,6 +35,8 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Toast.makeText(MainPage.this, "Test 2 Complete", Toast.LENGTH_SHORT).show();
+                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/spreadsheets/d/1W5Sh7cHQibtmhocmtCNroMxyM4p0tS9jn8z6Y1w6O14/edit#gid=1805625760"));
+                startActivity(browser);
             }
         });
 

@@ -46,8 +46,8 @@ public class TableMainLayout extends RelativeLayout {
     // set the header titles
     String headers[] = {
             "Header 1 n multi-lines",
-            "Complied / Status",
-            "Total Target",
+            "ABRA \n Complied / Status",
+            "ABRA \n Total Target",
             "Header 4",
             "Header 5",
             "Header 6",
@@ -109,7 +109,7 @@ public class TableMainLayout extends RelativeLayout {
 
         // add some table rows
         this.addTableRowToTableA();
-        this. addTableRowToTableB();
+        this.addTableRowToTableB();
 
         this.resizeHeaderHeight();
 
